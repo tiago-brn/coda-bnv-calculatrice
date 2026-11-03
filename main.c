@@ -2,26 +2,41 @@
 #include <stdlib.h>
 
 int main(void) {
-    int nbr1;
-    int nbr2;
+    int nombre_1;
+    int nombre_2;
     char operateur;
     printf("Bonjour ! Bienvenue dans la calculatrice.\n");
     printf("Veuillez choisir un opérateur (+, -, *, /, %%):\n");
     scanf("%c", &operateur);
     printf("Veuillez entrer le premier nombre:\n");
-    scanf("%d", &nbr1);
+    scanf("%d", &nombre_1);
     printf("Veuillez entrer le deuxième nombre:\n");
-    scanf("%d", &nbr2);
+    scanf("%d", &nombre_2);
     if (operateur == '+') {
         printf("addition\n");
+        int resultat = nombre_1 + nombre_2;
     } else if (operateur == '-') {
         printf("soustraction\n");
+        int resultat = nombre_1 - nombre_2;
     } else if (operateur == '*') {
         printf("multiplication\n");
+        int resultat = nombre_1 * nombre_2;
     } else if (operateur == '/') {
         printf("division\n");
+        double resultat = nombre_1 / nombre_2;
+        if (nombre_2 == 0) {
+            printf("Erreur : division par zéro impossible.\n");
+        } else {
+            printf("Résultat: %.2f\n", resultat);
+        }
     } else if (operateur == '%') {
         printf("modulo\n");
+        int resultat = nombre_1 % nombre_2;
+        if (nombre_2 == 0) {
+            printf("Erreur : modulo par zéro impossible.\n");
+        } else {
+            printf("Résultat: %d\n", resultat);
+        }
     } else {
         printf("Opérateur invalide.\n");
     }
